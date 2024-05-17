@@ -9,7 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { Button } from '../ui/button';
 import { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { toast } from 'react-hot-toast' 
 
 const formSchema = z.object({
@@ -32,13 +32,13 @@ export const StoreModal = () => {
         try {
             setLoading(true);
 
-            // throw new Error('x')
+            throw new Error('x')
 
-            const response = await axios.post('/api/stores', values);
-            window.location.assign(`/${response.data.id}`)
+            // const response = await axios.post('/api/stores', values);
+            // window.location.assign(`/${response.data.id}`)
 
-            console.log(response.data);
-            toast.success("Store created successfully")
+            // console.log(response.data);
+            // toast.success("Store created successfully")
         } catch (err) {
             toast.error(`Something went Wrong ${err}`);
         } finally {
